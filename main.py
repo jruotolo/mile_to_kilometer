@@ -1,5 +1,10 @@
 from tkinter import *
 
+def button_clicked():
+    user_input_float = float(miles_input.get())
+    result = user_input_float * 1.60934
+    result_label.config(text=f'{result:.2f}')
+
 window = Tk()
 window.title("Miles to Kilometer Converter")
 
@@ -19,13 +24,6 @@ result_label.grid(column=2, row=2)
 
 km_label = Label(text="Kilometers")
 km_label.grid(column=3, row=2)
-
-
-def button_clicked():
-    user_input_float = float(miles_input.get())
-    result = user_input_float * 1.60934
-    result_label.config(text=f'{result:.2f}')
-
 
 calculate_button = Button(text="Calculate", command=button_clicked)
 calculate_button.grid(column=2, row=3)
